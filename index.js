@@ -118,57 +118,35 @@ async function waitForVehicleContent(page) {
 
 async function getVehicleListings(page) {
   return await page.evaluate(() => {
-    const findElements = () => {
-      const strategies = [
-        // Strategy 1: Product grid items
-        () => document.querySelectorAll('.product-item-wrap, .inventory-item'),
-        // Strategy 2: Column-based grid
-        () => document.querySelectorAll('.col-sm-6, .col-md-6, .col-lg-6'),
-        // Strategy 3: Generic product containers
-        () => document.querySelectorAll('[class*="product-"], [class*="inventory-"]'),
-        // Strategy 4: Image-based detection
-        () => {
-          const images = Array.from(document.querySelectorAll('img[src*="inventory"], img[src*="vehicle"], img[src*="bus"]'));
-          return images.map(img => img.closest('.col-sm-6, .col-md-6, article, .product-item'));
-        }
-      ];
+    const selectors = [
+      '.vehicle-item', '.inventory-item', '.product-item',
+      '[class*="vehicle"]', '[class*="inventory"]', '[class*="listing"]',
+      '.col-sm-6', '.col-md-6', // Common grid layouts
+      '[class*="product-grid"]'
+    ];
 
-      for (const strategy of strategies) {
-        const elements = Array.from(strategy()).filter(el => el !== null);
-        const validElements = elements.filter(el => {
-          const hasImage = el.querySelector('img') !== null;
-          const hasPrice = el.textContent.toLowerCase().includes('price') || 
-                          el.textContent.toLowerCase().includes('contact') ||
-                          el.textContent.toLowerCase().includes('quote');
-          const hasYear = /20[0-9]{2}/.test(el.textContent);
-          const isVisible = el.offsetHeight > 100 && el.offsetWidth > 100;
-          const hasContent = el.textContent.trim().length > 50;
-          
-          return hasImage && isVisible && hasContent && (hasPrice || hasYear);
+    for (const selector of selectors) {
+      const elements = Array.from(document.querySelectorAll(selector));
+      const validElements = elements.filter(el => {
+        const hasImage = el.querySelector('img') !== null;
+        const hasPrice = el.textContent.toLowerCase().includes('price') || 
+                        el.textContent.toLowerCase().includes('contact');
+        const hasYear = /20\d{2}/.test(el.textContent);
+        return hasImage && (hasPrice || hasYear) && el.offsetHeight > 0;
+      });
+
+      if (validElements.length > 0) {
+        return validElements.map(el => {
+          const rect = el.getBoundingClientRect();
+          return {
+            top: el.offsetTop,
+            height: rect.height,
+            width: rect.width
+          };
         });
-
-        if (validElements.length > 0) {
-          return validElements;
-        }
       }
-      return [];
-    };
-
-    const elements = findElements();
-    return elements.map(el => {
-      const rect = el.getBoundingClientRect();
-      const style = window.getComputedStyle(el);
-      const marginTop = parseInt(style.marginTop) || 0;
-      const marginBottom = parseInt(style.marginBottom) || 0;
-      const padding = 20; // Extra padding to ensure no cut-offs
-      
-      return {
-        top: el.offsetTop - marginTop,
-        height: rect.height + marginTop + marginBottom + padding,
-        width: rect.width,
-        bottom: el.offsetTop + rect.height + marginBottom + padding
-      };
-    });
+    }
+    return [];
   });
 }
 
@@ -178,48 +156,21 @@ async function captureListingSection(page, listings, startIndex, endIndex) {
   const section = listings.slice(startIndex, endIndex);
   if (!section.length) return null;
 
-  // Calculate the section boundaries with padding
-  const padding = 20; // Extra padding around the section
-  const startY = section[0].top - padding;
+  const startY = section[0].top;
   const lastItem = section[section.length - 1];
-  const endY = lastItem.bottom + padding;
-  const sectionHeight = endY - startY;
+  const sectionHeight = (lastItem.top + lastItem.height) - startY;
 
-  // Ensure we're at the correct scroll position
-  await page.evaluate(async (scrollY) => {
-    // Smooth scroll to position
-    window.scrollTo({
-      top: scrollY,
-      behavior: 'smooth'
-    });
-    
-    // Wait for scroll to complete and any lazy-loaded images
-    await new Promise(resolve => {
-      const checkImages = () => {
-        const images = document.querySelectorAll('img');
-        const allLoaded = Array.from(images).every(img => 
-          img.complete && img.naturalHeight > 0
-        );
-        if (allLoaded) {
-          resolve();
-        } else {
-          setTimeout(checkImages, 100);
-        }
-      };
-      setTimeout(checkImages, 500); // Initial delay for scroll
-    });
-  }, startY);
+  // Scroll to the section
+  await page.evaluate((y) => window.scrollTo(0, y), startY);
+  await new Promise(resolve => setTimeout(resolve, 500));
 
-  // Additional wait for any animations or transitions
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  // Take screenshot with padding
+  // Capture the section
   const screenshot = await page.screenshot({
     clip: {
       x: 0,
       y: startY,
       width: page.viewport().width,
-      height: sectionHeight
+      height: sectionHeight,
     },
     encoding: 'base64',
     optimizeForSpeed: true
@@ -229,12 +180,7 @@ async function captureListingSection(page, listings, startIndex, endIndex) {
     screenshot,
     itemCount: section.length,
     startIndex,
-    endIndex: Math.min(endIndex, listings.length),
-    dimensions: {
-      startY,
-      endY,
-      height: sectionHeight
-    }
+    endIndex: Math.min(endIndex, listings.length)
   };
 }
 
@@ -347,15 +293,9 @@ async function main() {
     });
     const page = await browser.newPage();
     
-    // Set a larger viewport to reduce scrolling
-    await page.setViewport({ 
-      width: 1920, 
-      height: 2160  // Increased height to better handle sections
-    });
-    
     // Navigate to the target website
     await page.goto('https://www.hudsonbussales.com/PreOwnedBusesForSale', {
-      waitUntil: ['networkidle0', 'domcontentloaded'],
+      waitUntil: 'networkidle0',
       timeout: 60000
     });
 
@@ -379,8 +319,8 @@ async function main() {
       throw new Error('No vehicle listings found');
     }
 
-    // Process listings in sections with better boundary handling
-    const itemsPerSection = 3; // Reduced to 3 items per section for better control
+    // Process listings in sections
+    const itemsPerSection = 4; // Process 4 items at a time
     const results = [];
     
     for (let i = 0; i < listings.length; i += itemsPerSection) {
@@ -394,10 +334,7 @@ async function main() {
       );
 
       if (section) {
-        // Log section dimensions for debugging
-        console.log(`Section dimensions: ${JSON.stringify(section.dimensions)}`);
-        
-        // Save section screenshot
+        // Save section screenshot for debugging
         fs.writeFileSync(
           `screenshot_section_${Math.floor(i / itemsPerSection) + 1}.jpg`,
           Buffer.from(section.screenshot, 'base64')
@@ -414,7 +351,7 @@ async function main() {
           results.push(analysis);
         }
 
-        // Wait between captures
+        // Wait between API calls to avoid rate limiting
         await new Promise(resolve => setTimeout(resolve, 1000));
       }
     }

@@ -88,8 +88,8 @@
         "model": "Sprinter",
         "chassis": "",
         "condition": "PreOwned",
-        "stock_number": "18031",
-        "mileage": "10,600",
+        "stock_number": "180531",
+        "mileage": "",
         "passenger_capacity": "",
         "engine": "",
         "transmission": "",
@@ -216,20 +216,20 @@
       "specifications": {
         "make": "Starcraft",
         "model": "Allstar",
-        "chassis": null,
+        "chassis": "",
         "condition": "PreOwned",
         "stock_number": "240426",
         "mileage": "89,000",
         "passenger_capacity": "14",
-        "engine": null,
-        "transmission": null,
+        "engine": "",
+        "transmission": "",
         "fuel_type": "Gas",
         "exterior_color": "White",
         "location": "Cleburne",
         "dimensions": {
-          "length": null,
-          "width": null,
-          "height": null
+          "length": "",
+          "width": "",
+          "height": ""
         },
         "features": []
       }
@@ -242,20 +242,20 @@
       "specifications": {
         "make": "Diamond",
         "model": "VIP 2800",
-        "chassis": null,
+        "chassis": "",
         "condition": "PreOwned",
         "stock_number": "240292",
         "mileage": "74,000",
         "passenger_capacity": "24",
-        "engine": null,
-        "transmission": null,
+        "engine": "",
+        "transmission": "",
         "fuel_type": "Gas",
         "exterior_color": "White",
         "location": "Orlando",
         "dimensions": {
-          "length": null,
-          "width": null,
-          "height": null
+          "length": "",
+          "width": "",
+          "height": ""
         },
         "features": []
       }
@@ -268,20 +268,20 @@
       "specifications": {
         "make": "Diamond",
         "model": "VIP 2800",
-        "chassis": null,
+        "chassis": "",
         "condition": "PreOwned",
         "stock_number": "240291",
         "mileage": "69,000",
         "passenger_capacity": "24",
-        "engine": null,
-        "transmission": null,
+        "engine": "",
+        "transmission": "",
         "fuel_type": "Gas",
         "exterior_color": "White",
         "location": "Orlando",
         "dimensions": {
-          "length": null,
-          "width": null,
-          "height": null
+          "length": "",
+          "width": "",
+          "height": ""
         },
         "features": []
       }
@@ -294,20 +294,46 @@
       "specifications": {
         "make": "Diamond",
         "model": "VIP 2800",
-        "chassis": null,
+        "chassis": "",
         "condition": "PreOwned",
         "stock_number": "240284",
-        "mileage": "74,000",
+        "mileage": "79,000",
         "passenger_capacity": "24",
-        "engine": null,
-        "transmission": null,
+        "engine": "",
+        "transmission": "",
         "fuel_type": "Gas",
         "exterior_color": "White",
         "location": "Orlando",
         "dimensions": {
-          "length": null,
-          "width": null,
-          "height": null
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Starcraft Allstar",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Starcraft",
+        "model": "Allstar",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "234245",
+        "mileage": "80,000",
+        "passenger_capacity": "24",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
         },
         "features": []
       }
@@ -379,7 +405,7 @@
         "passenger_capacity": "",
         "engine": "",
         "transmission": "",
-        "fuel_type": "Gas",
+        "fuel_type": "",
         "exterior_color": "Yellow",
         "location": "Orlando",
         "dimensions": {
