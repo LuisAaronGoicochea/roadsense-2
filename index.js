@@ -354,7 +354,7 @@ async function main() {
     });
     
     // Navigate to the target website
-    await page.goto('https://www.buyabus.net/2024-available-vehicle-inventory', {
+    await page.goto('https://www.hudsonbussales.com/PreOwnedBusesForSale', {
       waitUntil: ['networkidle0', 'domcontentloaded'],
       timeout: 60000
     });
