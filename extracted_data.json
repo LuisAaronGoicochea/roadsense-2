@@ -1,0 +1,394 @@
+{
+  "vehicles": [
+    {
+      "title": "2023 Collins TH500",
+      "year": "2023",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Collins",
+        "model": "TH500",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "88850",
+        "mileage": "12,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Cleburne",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2023 Collins TH500",
+      "year": "2023",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Collins",
+        "model": "TH500",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "88849",
+        "mileage": "10,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Cleburne",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2023 Collins TH500",
+      "year": "2023",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Collins",
+        "model": "TH500",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "88858",
+        "mileage": "10,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Cleburne",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2022 LA West Sprinter",
+      "year": "2022",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "LA West",
+        "model": "Sprinter",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "18031",
+        "mileage": "10,600",
+        "passenger_capacity": "",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "",
+        "exterior_color": "Black",
+        "location": "Cleburne",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2022 LA West Sprinter",
+      "year": "2022",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "LA West",
+        "model": "Sprinter",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "240572",
+        "mileage": "18,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Diesel",
+        "exterior_color": "Black",
+        "location": "Alvarado",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2021 Collins TL400",
+      "year": "2021",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Collins",
+        "model": "TL400",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "250217",
+        "mileage": "3,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2020 Collins TL400",
+      "year": "2020",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Collins",
+        "model": "TL400",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "250233",
+        "mileage": "10,000",
+        "passenger_capacity": "14",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Blank (default)",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2020 Magellan DH516",
+      "year": "2020",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Magellan",
+        "model": "DH516",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "240613",
+        "mileage": "",
+        "passenger_capacity": "",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2020 Starcraft Allstar",
+      "year": "2020",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Starcraft",
+        "model": "Allstar",
+        "chassis": null,
+        "condition": "PreOwned",
+        "stock_number": "240426",
+        "mileage": "89,000",
+        "passenger_capacity": "14",
+        "engine": null,
+        "transmission": null,
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Cleburne",
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Diamond VIP 2800",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Diamond",
+        "model": "VIP 2800",
+        "chassis": null,
+        "condition": "PreOwned",
+        "stock_number": "240292",
+        "mileage": "74,000",
+        "passenger_capacity": "24",
+        "engine": null,
+        "transmission": null,
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Diamond VIP 2800",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Diamond",
+        "model": "VIP 2800",
+        "chassis": null,
+        "condition": "PreOwned",
+        "stock_number": "240291",
+        "mileage": "69,000",
+        "passenger_capacity": "24",
+        "engine": null,
+        "transmission": null,
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Diamond VIP 2800",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Diamond",
+        "model": "VIP 2800",
+        "chassis": null,
+        "condition": "PreOwned",
+        "stock_number": "240284",
+        "mileage": "74,000",
+        "passenger_capacity": "24",
+        "engine": null,
+        "transmission": null,
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": null,
+          "width": null,
+          "height": null
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Diamond VIP 2800",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Diamond",
+        "model": "VIP 2800",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "240287",
+        "mileage": "82,000",
+        "passenger_capacity": "24",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "Orlando",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 Glaval Universal 25'",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "Glaval",
+        "model": "Universal 25'",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "250003",
+        "mileage": "110,000",
+        "passenger_capacity": "12",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "White",
+        "location": "",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    },
+    {
+      "title": "2019 International CE",
+      "year": "2019",
+      "price": "Click for Quote!",
+      "description": "",
+      "specifications": {
+        "make": "International",
+        "model": "CE",
+        "chassis": "",
+        "condition": "PreOwned",
+        "stock_number": "240612",
+        "mileage": "",
+        "passenger_capacity": "",
+        "engine": "",
+        "transmission": "",
+        "fuel_type": "Gas",
+        "exterior_color": "Yellow",
+        "location": "Orlando",
+        "dimensions": {
+          "length": "",
+          "width": "",
+          "height": ""
+        },
+        "features": []
+      }
+    }
+  ]
+}

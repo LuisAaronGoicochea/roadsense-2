@@ -1,0 +1,19 @@
+{
+  "name": "bfs-roadsense",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Autonomous web scraper using Puppeteer and GPT-4 Vision",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.86.2",
+    "puppeteer": "^24.4.0"
+  }
+}
